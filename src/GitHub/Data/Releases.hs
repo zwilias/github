@@ -17,7 +17,7 @@ data Release = Release
     , releaseTagName         :: !Text
     , releaseTargetCommitish :: !Text
     , releaseName            :: !Text
-    , releaseBody            :: !Text
+    , releaseBody            :: !(Maybe Text)
     , releaseDraft           :: !Bool
     , releasePrerelease      :: !Bool
     , releaseCreatedAt       :: !UTCTime
@@ -39,7 +39,7 @@ instance FromJSON Release where
         <*> o .: "tag_name"
         <*> o .: "target_commitish"
         <*> o .: "name"
-        <*> o .: "body"
+        <*> o .:? "body"
         <*> o .: "draft"
         <*> o .: "prerelease"
         <*> o .: "created_at"
