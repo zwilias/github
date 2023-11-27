@@ -16,7 +16,7 @@ data Release = Release
     , releaseId              :: !(Id Release)
     , releaseTagName         :: !Text
     , releaseTargetCommitish :: !Text
-    , releaseName            :: !Text
+    , releaseName            :: !(Maybe Text)
     , releaseBody            :: !(Maybe Text)
     , releaseDraft           :: !Bool
     , releasePrerelease      :: !Bool
@@ -38,7 +38,7 @@ instance FromJSON Release where
         <*> o .: "id"
         <*> o .: "tag_name"
         <*> o .: "target_commitish"
-        <*> o .: "name"
+        <*> o .:? "name"
         <*> o .:? "body"
         <*> o .: "draft"
         <*> o .: "prerelease"
