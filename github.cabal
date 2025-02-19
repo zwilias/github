@@ -217,7 +217,7 @@ test-suite github-test
   hs-source-dirs:     spec
   main-is:            Spec.hs
   ghc-options:        -Wall -threaded
-  build-tool-depends: hspec-discover:hspec-discover >=2.7.1 && <2.11
+  build-tool-depends: hspec-discover:hspec-discover >=2.7.1 && <2.12
   other-extensions:   TemplateHaskell
   other-modules:
     GitHub.ActivitySpec
@@ -242,7 +242,7 @@ test-suite github-test
     , bytestring
     , file-embed
     , github
-    , hspec                 >=2.6.1 && <2.11
+    , hspec                 >=2.6.1 && <2.12
     , tagged
     , text
     , unordered-containers
